@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Realtime – Monitoring Ruang Kelas</title><link rel="stylesheet" href="style.css"></head>
+<body data-page="realtime">
+<header class="top">
+<div class="logo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b30f14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 13 8 13 11 5 14 19 17 11 21 11"/></svg></div>
+<nav><a class="" href="index.html">Kontrol</a><a class="on" href="realtime.html">Realtime</a></nav>
+<div class="pill" id="online"><i class="dot"></i><span>Perangkat offline</span></div>
+</header>
+<div class="layout">
+<aside class="side">
+<a class="" href="index.html"><svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/><circle cx="8" cy="18" r="2" fill="currentColor"/></svg>Kontrol</a>
+<a class="on" href="realtime.html"><svg viewBox="0 0 24 24"><polyline points="3 13 8 13 11 5 14 19 17 11 21 11"/></svg>Realtime</a>
+</aside>
+<main>
+<section class="stats"><div class="stat"><div><small>Total Masuk</small><b id="in">-</b></div><svg id="s1" viewBox="0 0 100 28" preserveAspectRatio="none"></svg></div><div class="stat"><div><small>Total Keluar</small><b id="out">-</b></div><svg id="s2" viewBox="0 0 100 28" preserveAspectRatio="none"></svg></div><div class="stat"><div><small>Rata-rata Suhu</small><b id="avgT">-</b></div><svg id="s3" viewBox="0 0 100 28" preserveAspectRatio="none"></svg></div></section>
+<section class="card profile"><div class="av">R</div><div><h2>Data Realtime</h2><small>Ruang Kelas / Lab</small></div><span class="sp"></span><span id="status"></span>
+<button class="btn" id="csv">Unduh CSV</button><a class="btn dk" href="index.html">Buka Kontrol</a></section>
+<section class="metrics">
+<div class="card m"><h3>Suhu</h3><div class="n" id="temp">-</div><div class="c">Suhu saat ini (°C)</div><div class="f"><div>MIN<b id="tmn">-</b></div><div>MAX<b id="tmx">-</b></div><div>RATA2<b id="tav">-</b></div></div></div>
+<div class="card m"><h3>Kelembapan</h3><div class="n" id="hum">-</div><div class="c">Kelembapan saat ini (%)</div><div class="f"><div>MIN<b id="hmn">-</b></div><div>MAX<b id="hmx">-</b></div><div>RATA2<b id="hav">-</b></div></div></div>
+<div class="card m"><h3>Orang di dalam</h3><div class="n" id="inside">-</div><div class="c">Jumlah orang saat ini</div><div class="f"><div>PUNCAK<b id="pmx">-</b></div><div>MASUK<b id="pin">-</b></div><div>KELUAR<b id="pout">-</b></div></div></div>
+</section>
+<section class="card"><div class="thead"><h3>Data Masuk</h3>
+<div class="tabs"><button class="on" data-t="live">Realtime Data</button><button data-t="h1">1 Jam</button><button data-t="h24">24 Jam</button><button data-t="all">Semua</button></div></div>
+<div class="wrap"><table><thead><tr><th>Waktu</th><th>Suhu</th><th>Kelembapan</th><th>Di dalam</th><th>Masuk / Keluar</th><th>Status</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+</main></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" hidden></script>
+<script type="module" src="app.js"></script>
+</body></html>

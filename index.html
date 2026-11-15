@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kontrol – Monitoring Ruang Kelas</title><link rel="stylesheet" href="style.css"></head>
+<body data-page="control">
+<header class="top">
+<div class="logo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b30f14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 13 8 13 11 5 14 19 17 11 21 11"/></svg></div>
+<nav><a class="on" href="index.html">Kontrol</a><a class="" href="realtime.html">Realtime</a></nav>
+<div class="pill" id="online"><i class="dot"></i><span>Perangkat offline</span></div>
+</header>
+<div class="layout">
+<aside class="side">
+<a class="on" href="index.html"><svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/><circle cx="8" cy="18" r="2" fill="currentColor"/></svg>Kontrol</a>
+<a class="" href="realtime.html"><svg viewBox="0 0 24 24"><polyline points="3 13 8 13 11 5 14 19 17 11 21 11"/></svg>Realtime</a>
+</aside>
+<main>
+<section class="stats">
+<div class="stat"><div><small>Suhu</small><b id="temp">-</b></div></div>
+<div class="stat"><div><small>Kelembapan</small><b id="hum">-</b></div></div>
+<div class="stat"><div><small>Orang di dalam</small><b id="inside">-</b></div></div>
+</section>
+<section class="card profile"><div class="av">K</div><div><h2>Panel Kontrol</h2><small>Ruang Kelas / Lab</small></div><span class="sp"></span><span id="status"></span>
+<span class="logout"><small id="who"></small> <button class="btn" id="logout">Keluar</button></span></section>
+<form class="card lock login" id="login"><input class="t" id="em" type="email" placeholder="Email admin" required><input class="t" id="pw" type="password" placeholder="Password" required><button class="btn dk">Masuk untuk mengontrol</button><span class="err" id="err"></span></form>
+<section class="ctl">
+<div class="card"><h3>Kontrol Sistem</h3>
+<div class="row"><span>Sistem<small>ON/OFF seluruh monitoring</small></span><label class="sw"><input type="checkbox" id="sys" disabled><i></i></label></div>
+<div class="row"><span>Mode<small>Auto = mengikuti sensor</small></span><div class="seg"><button data-m="auto" disabled>Auto</button><button data-m="manual" disabled>Manual</button></div></div>
+<div class="row"><span>Reset hitungan<small>Orang di dalam kembali ke 0</small></span><button class="btn" id="reset" disabled>Reset</button></div></div>
+<div class="card"><h3>Kontrol Manual</h3>
+<div class="row"><span>Lampu LED<small>Aktif di mode Manual</small></span><label class="sw"><input type="checkbox" id="led" disabled><i></i></label></div>
+<div class="row"><span>Buzzer<small>Aktif di mode Manual</small></span><label class="sw"><input type="checkbox" id="buz" disabled><i></i></label></div></div>
+<div class="card"><h3>Status Perangkat</h3>
+<div class="row"><span>Masuk / Keluar</span><b id="io">-</b></div>
+<div class="row"><span>Mode aktif</span><b id="mode">-</b></div>
+<div class="row"><span>LED</span><b id="ledS">-</b></div>
+<div class="row"><span>Buzzer</span><b id="buzS">-</b></div>
+<div class="row"><span>Update terakhir</span><b id="upd">-</b></div></div>
+</section>
+</main></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" hidden></script>
+<script type="module" src="app.js"></script>
+</body></html>
